@@ -65,7 +65,7 @@ or simply use Postman tool to test all the API endpoints.
 
 ## Features
 
-- Database configurations using MySQL
+- Database configurations using Sequelize
 - Implementation of Email script (using mailtrap.io)
 - Full CRUD code using TODO List
 - Image upload feature implementation
