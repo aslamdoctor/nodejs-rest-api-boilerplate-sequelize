@@ -1,0 +1,80 @@
+###
+# SignUp
+POST http://localhost:3333/user/signup HTTP/1.1
+content-type: application/json
+
+{
+  "email": "john@doe.com",
+  "password": "john123"
+}
+
+###
+# Verify signup link
+GET http://localhost:3333/user/signup/verify/c90046d9b3b0749e353cdeba61851d76 HTTP/1.1
+content-type: application/json
+
+###
+# Login
+POST http://localhost:3333/user/login HTTP/1.1
+content-type: application/json
+
+{
+  "email": "aslam.doctor@gmail.com",
+  "password": "aslam123"
+}
+
+###
+# Get logged in user
+GET http://localhost:3333/user HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huQGRvZS5jb20iLCJmaXJzdF9uYW1lIjpudWxsLCJsYXN0X25hbWUiOm51bGwsImJpbyI6bnVsbCwiaWF0IjoxNTk5NjY3NzIwLCJleHAiOjE1OTk2NzQ5MjB9.hH2RCBWX5bo4NCV9y92DsrTM1aClZ-x2k_-8Lzu28KY
+
+###
+# Update Profile
+POST http://localhost:3333/user/update_profile HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJqb2huQGRvZS5jb20iLCJmaXJzdF9uYW1lIjpudWxsLCJsYXN0X25hbWUiOm51bGwsImJpbyI6bnVsbCwiaWF0IjoxNTk5NjY3NzIwLCJleHAiOjE1OTk2NzQ5MjB9.hH2RCBWX5bo4NCV9y92DsrTM1aClZ-x2k_-8Lzu28KY
+
+{
+  "first_name": "Jahn",
+  "last_name": "Doe",
+  "email": "john@doe.com",
+  "bio": "Hello, I am John Doe."
+}
+
+###
+# Change Password
+POST http://localhost:3333/user/change_password HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhc2xhbS5kb2N0b3JAZ21haWwuY29tIiwiZmlyc3RfbmFtZSI6bnVsbCwibGFzdF9uYW1lIjpudWxsLCJiaW8iOm51bGwsImlhdCI6MTU5OTY3MDc5NiwiZXhwIjoxNTk5Njc3OTk2fQ.zSXjqRQSlgEs9TogJF_cf4x0v9rcHXMRiPZHzBhRW3A
+
+{
+  "new_password": "aslam123",
+  "repeat_new_password": "aslam123"
+}
+
+###
+# Forgot Password
+POST http://localhost:3333/user/forgot_password HTTP/1.1
+content-type: application/json
+
+{
+  "email": "aslam.doctor@gmail.com"
+}
+
+###
+# Verify forgot password link
+GET http://localhost:3333/user/forgot_password/verify/02076a2bf2e62b4b0ac1d02675414c4e HTTP/1.1
+content-type: application/json
+
+
+###
+# Reset Password
+POST http://localhost:3333/user/reset_password HTTP/1.1
+content-type: application/json
+
+{
+  "new_password": "aslam111",
+  "repeat_new_password": "aslam111",
+  "token": "02076a2bf2e62b4b0ac1d02675414c4e"
+}
